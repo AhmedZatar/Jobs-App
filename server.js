@@ -57,7 +57,6 @@ function newHandler(req,res){
   superagent.get(url2)
     .then((data2)=>{
 
-      console.log(data2.body);
       let initailData=data2.body;
       let jobsData=initailData.map((obj)=>{
         return new Job(obj);
@@ -72,7 +71,7 @@ function addHandler(req,res){
   let sql = 'INSERT INTO jobs (title, company, location, url, description) VALUES ($1,$2,$3,$4,$5) RETURNING *;';
   let safeValues =[req.body.title, req.body.company, req.body.location, req.body.url, req.body.description];
   client.query(sql,safeValues)
-    .then((data)=>{
+    .then(()=>{
 
       res.redirect('/mylist');
 

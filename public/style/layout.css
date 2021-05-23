@@ -1,0 +1,13 @@
+main{
+    width: 80%;
+    margin: auto;
+}
+.jobs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.jobs div{
+    width: 30%;
+    margin-bottom: 20px;
+}
