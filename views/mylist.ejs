@@ -1,0 +1,23 @@
+<%- include('layout/head') %>
+
+    <body>
+        <%- include('layout/header') %>
+            <main>
+                <h1>My List</h1>
+                <%jobs.forEach((job)=>{%>
+
+                    <div>
+                        <h2>Title: <%=job.title%></h2>
+                        <h2>Company: <%=job.company%></h2>
+                        <h2>Location: <%=job.location%></h2>
+                        <a href="<%=job.url%>"><%=job.url%></a>
+                        <a href="/details/<%=job.id%>">View Details</a>
+                    </div>
+
+
+                 <% }) %>
+            </main>
+
+    </body>
+
+    </html>

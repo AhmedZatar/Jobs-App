@@ -1,0 +1,28 @@
+<%- include('layout/head') %>
+
+    <body>
+        <%- include('layout/header') %>
+            <main>
+                <h1>All USA Jobs</h1>
+                <%jobs.forEach((job)=>{%>
+
+                    <form action="/addjob" method="POST">
+                        <h2>Title: <%=job.title%></h2>
+                        <input type="hidden" name="title" value="<%=job.title%>">
+                        <h2>Company: <%=job.company%></h2>
+                        <input type="hidden" name="company" value="<%=job.company%>">
+                        <h2>Location: <%=job.location%></h2>
+                        <input type="hidden" name="location" value="<%=job.location%>">
+                        <a href="<%=job.url%>"><%=job.url%></a>
+                        <input type="hidden" name="url" value="<%=job.url%>">
+                        <input type="hidden" name="description" value="<%=job.description%>">
+                        <button>Add to my list</button>
+                    </form>
+
+
+                 <% }) %>
+            </main>
+
+    </body>
+
+    </html>

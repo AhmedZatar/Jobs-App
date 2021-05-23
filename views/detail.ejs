@@ -1,0 +1,48 @@
+<%- include('layout/head') %>
+
+    <body>
+        <%- include('layout/header') %>
+            <main>
+                <h1>Details</h1>           
+
+                    <div>
+                        <h2>Title: <%=jobs.title%></h2>
+                        <h2>Company: <%=jobs.company%></h2>
+                        <h2>Location: <%=jobs.location%></h2>
+                        <a href="<%=jobs.url%>"><%=jobs.url%></a>
+                        <h2>Description</h2>
+                        <p><%=jobs.description%></p>
+                    </div>
+
+                    <div>
+                        <button class="updatebtn">Update</button>
+                    </div>
+
+                    <form action="/delete/<%=jobs.id%>?_method=delete" method="POST">
+                        <button>Delete</button>
+                    </form>
+
+                    <form class="updateform" action="/update/<%=jobs.id%>?_method=put" method="POST">
+                        <label for="titile">Title</label>
+                        <input na type="text" value="<%=jobs.title%>" name="title">
+                        <label for="company">Company</label>
+                        <input na type="text" value="<%=jobs.company%>" name="company">
+                        <label for="location">Location</label>
+                        <input na type="text" value="<%=jobs.location%>" name="location">
+                        <label for="url">URL</label>
+                        <input na type="text" value="<%=jobs.url%>" name="url">
+                        <label for="description">Description</label>
+                        <textarea name="description"  cols="30" rows="10"><%=jobs.description%></textarea>
+
+                        <button>Save</button>
+
+
+                    </form>
+
+            </main>
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/app.js"></script>
+
+    </html>
